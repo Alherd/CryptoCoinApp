@@ -69,9 +69,11 @@ class CoinAdapter(recyclerView: RecyclerView, internal var activity: Activity, v
         item.sevenDayChange.text = coinModel.percent_change_7d + "%"
 
         Picasso.with(activity.baseContext)
-                .load(StringBuilder(Common.imageUrl).append(coinModel.symbol!!.toLowerCase())
+                .load(StringBuilder(Common.imageUrl)
+                        .append(coinModel.symbol!!.toLowerCase())
                         .append(".png")
                         .toString())
+                .into(item.coinIcon)
 
 
         item.oneHourChange.setTextColor(if (coinModel.percent_change_1h!!.contains("-"))
@@ -93,11 +95,11 @@ class CoinAdapter(recyclerView: RecyclerView, internal var activity: Activity, v
         )
     }
 
-    fun setLoaded(){
+    fun setLoaded() {
         isLoading = false
     }
 
-    fun updateData(coinModels: List<CoinModel>){
+    fun updateData(coinModels: List<CoinModel>) {
         this.items = coinModels
         notifyDataSetChanged()
     }
