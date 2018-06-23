@@ -86,6 +86,7 @@ class MainActivity : AppCompatActivity(), ILoadMore {
                             items.addAll(items)
                             adapter.setLoaded()
                             adapter.updateData(items)
+                            swipe_to_refresh.isRefreshing = false
                         }
                     }
 
