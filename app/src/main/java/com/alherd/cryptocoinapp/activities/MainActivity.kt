@@ -1,11 +1,11 @@
-package com.alherd.cryptocoinapp
+package com.alherd.cryptocoinapp.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.widget.LinearLayout
 import android.widget.Toast
+import com.alherd.cryptocoinapp.R
 import com.alherd.cryptocoinapp.adapter.CoinAdapter
 import com.alherd.cryptocoinapp.common.Common
 import com.alherd.cryptocoinapp.interfaces.ILoadMore
@@ -17,10 +17,10 @@ import okhttp3.*
 import java.io.IOException
 
 class MainActivity : AppCompatActivity(), ILoadMore {
-    internal var items: MutableList<CoinModel> = ArrayList()
-    internal lateinit var adapter: CoinAdapter
-    internal lateinit var client: OkHttpClient
-    internal lateinit var request: Request
+    private var items: MutableList<CoinModel> = ArrayList()
+    private lateinit var adapter: CoinAdapter
+    private lateinit var client: OkHttpClient
+    private lateinit var request: Request
 
     override fun onLoadMore() {
         if (items.size <= Common.MAX_COIN_LOAD)

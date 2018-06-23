@@ -6,7 +6,7 @@
     android:id="@+id/swipe_to_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.alherd.cryptocoinapp.MainActivity">
+    tools:context="com.alherd.cryptocoinapp.activities.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
